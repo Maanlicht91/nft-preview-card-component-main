@@ -1,0 +1,175 @@
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main: hsl(217, 54%, 11%);
+    --very-dark-blue-card:hsl(216, 50%, 16%);
+    --very-dark-blue-line:hsl(215, 32%, 27%);
+    --white:hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--very-dark-blue-main);
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background-color: var(--very-dark-blue-card);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+    width: 310px;
+    height: 560px;
+    border-radius: 0.8rem;
+}
+
+article {
+    margin: 1.3rem;
+}
+
+
+article:first-child {
+    color: var(--soft-blue); 
+}
+
+article:nth-child(2) {
+    display: flex;
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+article:last-child {
+    border-top: 1px solid var(--very-dark-blue-line);
+    width: 270px;
+    margin: 0 1rem 0 1.3rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 15px;
+    color: var(--soft-blue);
+    padding-top: 0.7rem;
+}
+
+article .avatar-pic {
+    width: 40px;
+    border: 1px solid var(--white);
+    border-radius: 2.5rem;
+}
+
+h1{
+    color: var(--white);
+    padding: 1rem 1rem 1rem 0;
+}   
+
+h1:hover, span:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+h2 {
+    color: var(--cyan);
+    font-weight: 400;
+    text-align: center;
+    padding: 0 6.2rem 0 0.35rem;
+    font-size: 13px;
+}
+
+h3 {
+    color: var(--soft-blue);
+    font-weight: 300;
+    padding-left: 0.3rem;
+}
+
+span {
+    color: var(--white);
+}
+
+
+article:last-child p {
+    padding-top: 0.5rem;
+}
+
+.cube-pic {
+    width: 270px;
+    height: 270px;
+    border-radius: 0.6rem;
+    opacity: 1;
+    position: absolute;
+}
+
+.overlay {
+    width: 270px;
+    height: 270px;
+    opacity: 0;
+    transition: .1s ease;
+    background-color: var(--cyan);
+    border-radius: 0.6rem;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+.view-icon {
+    opacity: 1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+.container:hover .cube-pic {
+    opacity: 0.5;
+    background-color: var(--cyan);
+}
+
+
+.icon-eth {
+    width: 10px;
+    height: 15px;
+    position: relative;
+    top: 0.1rem;
+}
+
+.icon-clock {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 0.1rem;
+}
+
+.attribution { 
+    color: var(--white);
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    bottom: 10px;
+    font-size: 0.75rem; 
+    text-align: center; 
+    line-height: 20px;
+}
+.attribution a { 
+    text-decoration: none;
+    color: var(--soft-blue); 
+}
+
+@media (max-width: 640px) {
+    main {
+        margin-top: 5rem;
+    }
+
+    .view-icon {
+    top: 30%;
+}
+}
